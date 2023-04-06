@@ -6,36 +6,41 @@ using namespace std;
 
 class Shape
 {
-    int _x;
-    int _y;
+    const double PI = 3.14;
+    int x;
+    int y;
 public:
+    static int type;
     //Shape() : _x{0}, _y{0} {}
     Shape() : Shape(0, 0) {}
-    Shape(int x, int y) : _x{ abs(x) }, _y{abs(y)} {}
+    Shape(int x, int y)
+        : x{ abs(x) }, y{ abs(y) } {}
 
     void SetX(int x)
     {
-        _x = abs(x);
+        this->x = abs(x);
     }
     int GetX()
     {
-        return _x;
+        return x;
     }
     void SetY(int y)
     {
-        _y = abs(y);
+        this->y = abs(y);
     }
     int GetY()
     {
-        return _y;
+        return y;
     }
 
     void Print()
     {
-        cout << "X = " << _x
-            << ", Y = " << _y << "\n";
+        cout << "X = " << x
+            << ", Y = " << y << "\n";
     }
 };
+
+int Shape::type = 100;
 
 int main()
 {
